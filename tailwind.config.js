@@ -6,6 +6,7 @@ export default {
       backgroundColor: {
         "main-bg": "#010409",
         "nav-bg": "#010409",
+        "sidebar-bg": "#0d1117",
         "secondary-dark-bg": "#33373E",
         "light-gray": "#F7F7F7",
         "half-transparent": "rgba(0, 0, 0, 0.5)",

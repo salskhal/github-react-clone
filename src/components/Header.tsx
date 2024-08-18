@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   GithubIcon,
   PlusIcon,
@@ -44,14 +45,16 @@ const IconContainer = ({ children, className }: IconContainerProps) => {
 
 export const Header = () => {
   return (
-    <nav className="bg-nav-bg p-4 md:px-8 flex justify-between items-center">
+    <nav className="bg-nav-bg p-4 md:px-8 flex justify-between items-center border-b border-[#30363d]">
       <div className="flex items-center space-x-3">
         <IconContainer>
           <HamBurgerIcon />
         </IconContainer>
-        <div>
-          <GithubIcon />
-        </div>
+        <Link to="/">
+          <div>
+            <GithubIcon />
+          </div>
+        </Link>
         <div>
           <p className="text-white text-sm font-semibold">Dashboard</p>
         </div>
@@ -70,7 +73,7 @@ export const Header = () => {
         </div>
         <div>
           <img
-            src="https://avatars.githubusercontent.com/u/204768?v=4"
+            src="https://avatars.githubusercontent.com/u/204763?v=4"
             alt="user"
             className="w-8 h-8 rounded-full"
           />
