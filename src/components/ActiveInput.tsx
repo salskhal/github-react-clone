@@ -1,11 +1,11 @@
 export default function ActiveInput() {
   return (
-    <div className="absolute top-0 inset-x-0 mx-auto lg:max-w-[80%]  mt-1 bg-gray-800 rounded-md shadow-lg z-10">
+    <div className="absolute top-0 left-0 lg:left-24 lg:min-w-[80%]  mt-1 bg-nav-bg border-2 border-[#8D96A0] rounded-md shadow-lg z-10">
     {/* <div className="fixed inset-x-0 top-16 mx-auto w-[90%] max-w-3xl bg-gray-800 rounded-md shadow-lg z-10"> */}
       <div className="p-4">
         <input
           type="text"
-          className="w-full bg-gray-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full bg-transparent text-white rounded-md  border border-[#8D96A0] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Search..."
           autoFocus
         />

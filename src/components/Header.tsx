@@ -4,31 +4,39 @@ import {
   IssuesIcon,
   PullIcon,
   NotificationIcon,
+  HamBurgerIcon,
 } from "./icons";
 import SearchInput from "./SearchInput";
 
 interface IconContainerProps {
   children: React.ReactNode;
+  className?: string;
 }
 
 const NavIcons = [
   {
     icon: <PlusIcon />,
+    className: "hidden md:flex",
   },
   {
     icon: <IssuesIcon />,
+    className: "hidden md:flex",
   },
   {
     icon: <PullIcon />,
+    className: "hidden md:flex",
   },
   {
     icon: <NotificationIcon />,
+    className: "flex",
   },
 ];
 
-const IconContainer = ({ children }: IconContainerProps) => {
+const IconContainer = ({ children, className }: IconContainerProps) => {
   return (
-    <div className="border border-[#30363d] rounded-md p-2 flex items-center justify-center">
+    <div
+      className={`border border-[#30363d] rounded-md p-2 flex items-center justify-center ${className}`}
+    >
       {children}
     </div>
   );
@@ -37,23 +45,27 @@ const IconContainer = ({ children }: IconContainerProps) => {
 export const Header = () => {
   return (
     <nav className="bg-nav-bg p-4 md:px-8 flex justify-between items-center">
-      <div className="flex items-center">
+      <div className="flex items-center space-x-3">
+        <IconContainer>
+          <HamBurgerIcon />
+        </IconContainer>
         <div>
           <GithubIcon />
         </div>
         <div>
-          <p>Dashboard</p>
+          <p className="text-white text-sm font-semibold">Dashboard</p>
         </div>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2 md:space-x-4">
         <SearchInput />
-
         {/* have a horizontal line */}
         <div className="h-5 w-px bg-[#30363d]"></div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center md:space-x-4">
           {NavIcons.map((navIcon, index) => (
-            <IconContainer key={index}>{navIcon.icon}</IconContainer>
+            <IconContainer key={index} className={navIcon.className}>
+              {navIcon.icon}
+            </IconContainer>
           ))}
         </div>
         <div>

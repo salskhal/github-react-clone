@@ -100,6 +100,24 @@ const NotificationIcon = (props: IconProps) => (
   </svg>
 );
 
+const HamBurgerIcon = (props: IconProps) => (
+  <svg
+    width={16}
+    height={16}
+    aria-hidden="true"
+    className="octicon octicon-three-bars"
+    data-view-component="true"
+    {...props}
+  >
+    <path
+      fill="#8D96A0"
+      fillRule="evenodd"
+      d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75ZM1.75 6a.75.75 0 0 0 0 1.5h12.5a.75.75 0 0 0 0-1.5H1.75Zm0 3a.75.75 0 0 0 0 1.5h12.5a.75.75 0 0 0 0-1.5H1.75Z"
+    />
+  </svg>
+);
+
+
 export {
   GithubIcon,
   SearchIcon,
@@ -107,4 +125,5 @@ export {
   PlusIcon,
   PullIcon,
   NotificationIcon,
+  HamBurgerIcon,
 };
