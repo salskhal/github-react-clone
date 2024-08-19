@@ -1,6 +1,6 @@
 export default function ActiveInput() {
   return (
-    <div className="absolute top-0 left-0 lg:left-24 lg:min-w-[80%]  mt-1 bg-nav-bg border-2 border-[#8D96A0] rounded-md shadow-lg z-10">
+    <div className="absolute top-0 left-0 lg:left-24 lg:min-w-[80%]  mt-1 bg-nav-bg border border-[#8D96A0] rounded-md shadow-lg z-10">
     {/* <div className="fixed inset-x-0 top-16 mx-auto w-[90%] max-w-3xl bg-gray-800 rounded-md shadow-lg z-10"> */}
       <div className="p-4">
         <input

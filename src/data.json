@@ -1,0 +1,52 @@
+// data.json
+[
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/1?v=4",
+      "username": "user1",
+      "repoName": "awesome-project",
+      "language": "JavaScript",
+      "stars": 120,
+      "timeAgo": "2 days ago"
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2?v=4",
+      "username": "user2",
+      "repoName": "cool-library",
+      "language": "Python",
+      "stars": 95,
+      "timeAgo": "5 days ago"
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/3?v=4",
+      "username": "user3",
+      "repoName": "data-visualizer",
+      "language": "TypeScript",
+      "stars": 78,
+      "timeAgo": "1 week ago"
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/4?v=4",
+      "username": "user4",
+      "repoName": "ai-toolkit",
+      "language": "C++",
+      "stars": 150,
+      "timeAgo": "3 days ago"
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/5?v=4",
+      "username": "user5",
+      "repoName": "web-framework",
+      "language": "Ruby",
+      "stars": 200,
+      "timeAgo": "4 hours ago"
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/6?v=4",
+      "username": "user6",
+      "repoName": "cloud-service",
+      "language": "Go",
+      "stars": 45,
+      "timeAgo": "1 day ago"
+    }
+  ]
+  
