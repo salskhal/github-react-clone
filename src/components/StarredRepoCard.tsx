@@ -1,11 +1,4 @@
-interface StarredRepoCardProps {
-  avatarUrl: string;
-  username: string;
-  repoName: string;
-  language: string;
-  stars: number;
-  timeAgo: string;
-}
+
 
 const StarredRepoCard = ({
   avatarUrl,

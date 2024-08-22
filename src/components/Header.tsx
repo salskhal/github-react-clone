@@ -9,10 +9,6 @@ import {
 } from "./icons";
 import SearchInput from "./SearchInput";
 
-interface IconContainerProps {
-  children: React.ReactNode;
-  className?: string;
-}
 
 const NavIcons = [
   {

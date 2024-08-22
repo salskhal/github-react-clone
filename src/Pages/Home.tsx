@@ -2,6 +2,7 @@ import HomeContent from "../components/HomeContent";
 import HomeRightSidebar from "../components/HomeRightSidebar";
 import HomeSidebar from "../components/HomeSidebar";
 
+
 export default function Home() {
   return (
     <main className="flex h-screen w-full">

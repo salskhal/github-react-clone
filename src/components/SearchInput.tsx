@@ -9,16 +9,16 @@ const SearchInput: React.FC = () => {
     setIsActive(true);
   };
 
-  const handleActiveInputClick = () => {
-    // todo
-    // 1. check if the click is outside the active input
-    // 2. if it is, set isActive to false
-  };
+
+  const handbleActiveInputClick = () => {
+    setIsActive(false);
+  }
+
 
   return (
-    <div onClick={handleActiveInputClick}>
+    <div >
       <DefaultInput onClick={handleDefaultInputClick} />
-      {isActive && <ActiveInput />}
+      {isActive && <ActiveInput onClick={handbleActiveInputClick} />}
     </div>
   );
 };

@@ -1,11 +1,15 @@
-
 import SearchSidebar from "../components/SearchSidebar";
+import SearchContent from "../components/SearchContent";
 
 export default function Search() {
   return (
-    <div className="flex h-screen w-full">
+    <main className="flex h-screen w-full bg-[#0d1117]">
       <SearchSidebar />
-      SEARCH
-    </div>
+      <div className="flex size-full flex-col" >
+        <div className="home">
+          <SearchContent />
+        </div>
+      </div>
+    </main>
   );
 }

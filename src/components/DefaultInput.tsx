@@ -1,12 +1,6 @@
 import { SearchIcon } from "./icons";
 
 
-
-interface DefaultInputProps {
-    onClick: () => void;
-  }
-
-
 export default function DefaultInput({onClick}: DefaultInputProps) {
  
   return (

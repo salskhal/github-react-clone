@@ -1,7 +1,6 @@
 
-
 export default function SearchSidebar() {
   return (
-    <div className='searchSidebar'>Search Sidebar</div>
+    <div className='searchSidebar text-white'>Search Sidebar</div>
   )
 }
