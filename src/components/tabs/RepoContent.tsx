@@ -8,8 +8,6 @@ export default function RepoContent() {
 
   const currentProfile = useUserStore((state) => state.currentProfile);
 
-  
-
   const { getUserProfile, loading } = useUserProfile();
 
   useEffect(() => {
@@ -56,7 +54,7 @@ export default function RepoContent() {
             <a href={currentProfile?.url}>Github</a>
           </h2>
 
-          <p>
+          <div>
             {currentProfile?.companyHTML && (
               <div
                 dangerouslySetInnerHTML={{
@@ -64,9 +62,9 @@ export default function RepoContent() {
                 }}
               />
             )}
-          </p>
+          </div>
 
-          <p>
+          <div>
             {currentProfile?.bioHTML && (
               <div
                 dangerouslySetInnerHTML={{
@@ -74,7 +72,7 @@ export default function RepoContent() {
                 }}
               />
             )}
-          </p>
+          </div>
 
           <h2>Readme</h2>
         </div>

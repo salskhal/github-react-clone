@@ -34,6 +34,10 @@
     @apply no-scrollbar flex w-full flex-row h-screen max-xl:overflow-y-scroll bg-main-bg;
   }
 
+  .search {
+    @apply no-scrollbar flex w-full flex-row h-screen max-xl:overflow-y-scroll bg-sidebar-bg;
+  }
+
   .home-content {
     @apply no-scrollbar flex w-full flex-1 flex-col gap-4 px-5  py-4  xl:max-h-screen xl:overflow-y-scroll;
   }

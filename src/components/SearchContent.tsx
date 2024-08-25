@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useUserStore } from "../store/userStore";
 import { useSearchUsers } from "../hooks/useSearchUsers";
 import UserCard from "./UserCard";
+import GifLoader from "./GifLoader";
 
 export default function SearchContent() {
   const [searchParams] = useSearchParams();
@@ -28,7 +29,7 @@ export default function SearchContent() {
   return (
     <div className="home-content">
       {loading ? (
-        <div>Loading...</div>
+        <GifLoader />
       ) : (
         <div className="">
           <h1 className="text-white text-2xl font-bold mb-5">
