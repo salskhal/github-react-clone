@@ -40,12 +40,12 @@ declare interface UserState {
     searchResults: User[];
     userCount: number;
     currentProfile: UserProfile | undefined;
-    currentProfileReadme: string;
+    // currentProfileReadme: string;
     setSearchTerm: (term: string) => void;
     setSearchResults: (results: User[]) => void;
     setUserCount: (count: number) => void;
     setCurrentProfile: (profile: UserProfile) => void;
-    setCurrentProfileReadme: (readme: string) => void;
+    // setCurrentProfileReadme: (readme: string) => void;
 }
 declare interface UserCardProps {
     user: User;

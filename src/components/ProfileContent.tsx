@@ -31,11 +31,16 @@
 //   );
 // }
 
-
 import { useSearchParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import RepoContent from "./tabs/RepoContent";
-import { FaBook, FaBox, FaStar, FaHeart, FaFolderOpen } from "react-icons/fa";
+import {
+  FaBook,
+  FaBox,
+  FaStar,
+  FaFolderOpen,
+  FaMailchimp,
+} from "react-icons/fa";
 
 export default function ProfileContent() {
   const [searchParams] = useSearchParams();
@@ -47,8 +52,12 @@ export default function ProfileContent() {
         return <div>Packages Content</div>;
       case "projects":
         return <div>Projects Content</div>;
+      case "stars":
+        return <div>Stars Content</div>;
+      case "repositories":
+        return <div>repositories</div>;
       default:
-        return <RepoContent />;
+        return <div>Overview Content</div>;
     }
   };
 
@@ -70,16 +79,16 @@ export default function ProfileContent() {
       to: "?tab=projects",
     },
     {
+      title: "Packages",
+      icon: <FaMailchimp />,
+      to: "?tab=packages",
+    },
+    {
       title: "Stars",
       icon: <FaStar />,
       to: "?tab=stars",
       count: 1100,
     },
-    {
-      title: "Sponsoring",
-      icon: <FaHeart />,
-      to: "?tab=sponsoring",
-    }
   ];
 
   return (
@@ -101,7 +110,11 @@ export default function ProfileContent() {
           </NavLink>
         ))}
       </nav>
-      <div>{renderTabContent()}</div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 min-h-screen bg-[#0d1117]">
+        <RepoContent />
+        <div className="md:col-span-3 text-white">{renderTabContent()}</div>
+      </div>
     </div>
   );
 }

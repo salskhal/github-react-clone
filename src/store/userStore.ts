@@ -8,10 +8,7 @@ export const useUserStore = create<UserState>((set) => ({
     searchResults: [],
     userCount: 0,
     currentProfile: undefined ,
-    currentProfileReadme: '',
-
-    
-
+    // currentProfileReadme: '',
 
     // Methods
     setSearchTerm: (term) => {
@@ -21,6 +18,6 @@ export const useUserStore = create<UserState>((set) => ({
     setSearchResults: (results) => set({ searchResults: results }),
     setUserCount: (count) => set({ userCount: count }),
     setCurrentProfile: (profile) => set({ currentProfile: profile }),
-    setCurrentProfileReadme: (readme) => set({ currentProfileReadme: readme }),
+    // setCurrentProfileReadme: (readme) => set({ currentProfileReadme: readme }),
 
 }));

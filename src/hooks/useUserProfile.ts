@@ -39,26 +39,27 @@ const USER_PROFILE = gql`
         totalCount
       }
     }
-    repository(owner: $username, name: $username) {
-      name
-      object(expression: "HEAD:README.md") {
-        ... on Blob {
-          text
-        }
-      }
-    }
+    # repository(owner: $username, name: $username) {
+    #   name
+    #   object(expression: "HEAD:README.md") {
+    #     ... on Blob {
+    #       text
+    #     }
+    #   }
+    # }
   }
 `;
 
 export const useUserProfile = () => {
 
   const setCurrentProfile = useUserStore((state) => state.setCurrentProfile);
-  const setCurrentProfileReadme = useUserStore((state) => state.setCurrentProfileReadme);
+  // const setCurrentProfileReadme = useUserStore((state) => state.setCurrentProfileReadme);
 
   const [getUserProfile, {  loading, error }] = useLazyQuery(USER_PROFILE, {
+    fetchPolicy: 'network-only',
     onCompleted: (data) => {
       setCurrentProfile(data.user);
-      setCurrentProfileReadme(data.repository.object.text);
+      // setCurrentProfileReadme(data.repository.object.text);
     },
   });
 

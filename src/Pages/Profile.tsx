@@ -1,11 +1,9 @@
-import ProfileContent from "../components/ProfileContent";
+  import ProfileContent from "../components/ProfileContent";
 
-
-export default function Profile() {
-  return (
-    <div>
-      
-      <ProfileContent />
-    </div>
-  );
-}
+  export default function Profile() {
+    return (
+      <div>
+        <ProfileContent />
+      </div>
+    );
+  }

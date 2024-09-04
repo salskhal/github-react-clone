@@ -2,80 +2,116 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useUserStore } from "../../store/userStore";
 import { useUserProfile } from "../../hooks/useUserProfile";
+import {
+  FollowersIcon,
+  LinkIcon,
+  LocationIcon,
+  OrganizationIcon,
+} from "../icons";
 
 export default function RepoContent() {
   const { username } = useParams();
 
+  console.log(username);
+
   const currentProfile = useUserStore((state) => state.currentProfile);
+
+  console.log(currentProfile);
 
   const { getUserProfile, loading } = useUserProfile();
 
   useEffect(() => {
     const query = username;
 
+    useUserStore.setState({ currentProfile: undefined });
+
     if (query) {
-      getUserProfile({ variables: { username: query } });
+      getUserProfile({ variables: { username: query } }).catch((error) => {
+        console.error("Failed to fetch user profile:", error);
+      });
     }
   }, [getUserProfile, username]);
 
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>Profile</h1>
-      <div>
-        {/* <h1>{currentProfile?.name}</h1>
-      <p>{currentProfile?.bio}</p> */}
-        <h1>{currentProfile?.name}</h1>
-        <p>{currentProfile?.bio}</p>
+    <div className="md:col-span-1 p-10">
+      <div className="flex items-center rounded-full overflow-hidden">
+        <img
+          src={currentProfile?.avatarUrl}
+          alt={currentProfile?.name}
+          className="w-full"
+        />
+      </div>
+      <div className="flex flex-col">
+        <h1 className="text-2xl font-semibold text-white">
+          {currentProfile?.name}
+        </h1>
+        <p className="text-xl font-light text-[#9198a1]">
+          {currentProfile?.login}
+        </p>
+      </div>
 
-        <div>
-          <h2>Followers: {currentProfile?.followers.totalCount}</h2>
-          <h2>Following: {currentProfile?.following.totalCount}</h2>
-          <h2>
-            Starred Repos: {currentProfile?.starredRepositories.totalCount}
-          </h2>
-        </div>
+      <button className="bg-[#212830] w-full px-2 py-1 border border-[#3d444d] rounded-md text-white mt-2">
+        <span>Follow</span>
+      </button>
 
-        <div>
-          <h2>Location: {currentProfile?.location}</h2>
+      {currentProfile?.bioHTML && (
+        <div
+          className="text-white"
+          dangerouslySetInnerHTML={{ __html: currentProfile?.bioHTML }}
+        ></div>
+      )}
+
+      <div className="flex items-center space-x-2 text-white mt-2">
+        <FollowersIcon />
+        <p>
+          {" "}
+          {currentProfile?.followers?.totalCount || 0} <span>followers</span>
+        </p>
+        <span>·</span>
+        <p>
+          {currentProfile?.following?.totalCount || 0} <span>following</span>
+        </p>
+      </div>
+
+      <div className="mt-4 space-y-2 text-gray-400">
+        {currentProfile?.company && (
+          <div className="flex items-center gap-2">
+            <OrganizationIcon />
+            <h2>{currentProfile?.company}</h2>
+          </div>
+        )}
+        {currentProfile?.email && (
+          <div className="flex items-center gap-2">
+            <OrganizationIcon />
+            <h2>{currentProfile?.email}</h2>
+          </div>
+        )}
+
+        {currentProfile?.location && (
+          <div className="flex items-center gap-2">
+            <LocationIcon />
+            <h2>{currentProfile?.location}</h2>
+          </div>
+        )}
+
+        {currentProfile?.websiteUrl && (
+          <a href={currentProfile?.websiteUrl} className="flex items-center gap-2" target="_blank">
+            <LinkIcon />
+            <h2>{currentProfile?.websiteUrl}</h2>
+          </a>
+        )}
+
+        
+        <LinkIcon />
+        <h2>Location: {currentProfile?.location}</h2>
+        {currentProfile?.twitterUsername && (
           <h2>Twitter: {currentProfile?.twitterUsername}</h2>
-          <h2>Website: {currentProfile?.websiteUrl}</h2>
-          <h2>Projects: {currentProfile?.projects.totalCount}</h2>
-          <h2>Repos: {currentProfile?.repositories.totalCount}</h2>
-          <h2>Packages: {currentProfile?.packages.totalCount}</h2>
-        </div>
-
-        <div>
-          <h2>Company: {currentProfile?.company}</h2>
-          <h2>Email: {currentProfile?.email}</h2>
-
-          <h2>
-            <a href={currentProfile?.url}>Github</a>
-          </h2>
-
-          <div>
-            {currentProfile?.companyHTML && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: currentProfile?.companyHTML,
-                }}
-              />
-            )}
-          </div>
-
-          <div>
-            {currentProfile?.bioHTML && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: currentProfile?.bioHTML,
-                }}
-              />
-            )}
-          </div>
-
-          <h2>Readme</h2>
-        </div>
+        )}
+        <h2>
+          Website: {currentProfile?.websiteUrl || "Website not available"}
+        </h2>
       </div>
     </div>
   );
