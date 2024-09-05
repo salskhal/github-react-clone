@@ -43,6 +43,30 @@ export default function HomeContent() {
       stars: 150,
       timeAgo: "3 days ago",
     },
+    {
+      avatarUrl: "https://avatars.githubusercontent.com/u/4?v=4",
+      username: "user4",
+      repoName: "ai-toolkit",
+      language: "C++",
+      stars: 150,
+      timeAgo: "3 days ago",
+    },
+    {
+      avatarUrl: "https://avatars.githubusercontent.com/u/4?v=4",
+      username: "user4",
+      repoName: "ai-toolkit",
+      language: "C++",
+      stars: 150,
+      timeAgo: "3 days ago",
+    },
+    {
+      avatarUrl: "https://avatars.githubusercontent.com/u/4?v=4",
+      username: "user4",
+      repoName: "ai-toolkit",
+      language: "C++",
+      stars: 150,
+      timeAgo: "3 days ago",
+    },
   ];
 
   return (
